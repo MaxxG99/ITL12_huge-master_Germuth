@@ -248,7 +248,9 @@ class RegistrationModel
      */
     public static function sendVerificationEmail($user_id, $user_email, $user_activation_hash)
     {
-        $body = Config::get('EMAIL_VERIFICATION_CONTENT') . Config::get('URL') . Config::get('EMAIL_VERIFICATION_URL')
+        return true;
+
+       /* $body = Config::get('EMAIL_VERIFICATION_CONTENT') . Config::get('URL') . Config::get('EMAIL_VERIFICATION_URL')
                 . '/' . urlencode($user_id) . '/' . urlencode($user_activation_hash);
 
         $mail = new Mail;
@@ -262,7 +264,7 @@ class RegistrationModel
         } else {
             Session::add('feedback_negative', Text::get('FEEDBACK_VERIFICATION_MAIL_SENDING_ERROR') . $mail->getError() );
             return false;
-        }
+        } */
     }
 
     /**
